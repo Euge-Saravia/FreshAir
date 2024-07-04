@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
 
-const API_TOKEN = "1186b11366600916c7c7d5632e24383a03b93045";
-
 const Container = styled.div`
   width: 300px;
   padding: 15px;
@@ -100,7 +98,7 @@ const Card = () => {
   const [error, setError] = useState(null);
 
   const fetchData = async (cityName) => {
-    const API_URL = `https://api.waqi.info/feed/${cityName}/?token=${API_TOKEN}`;
+    const API_URL = `http://localhost:8000/feed/${cityName}`;
     setLoading(true);
     try {
       const response = await axios.get(API_URL);
