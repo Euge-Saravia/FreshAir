@@ -8,7 +8,7 @@ const Navbar = styled.nav`
   position: absolute;
   width:100%;
   justify-content: space-between;
-  left: opx;
+  left: 0px;
   top:0px;
   box-sizing: border-box;
 `;
