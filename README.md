@@ -7,18 +7,25 @@
 
 1-Descripción del Proyecto
 
-2-Requisitos Técnicos Utilizados
+2- Figma
 
-3-Instalación
+3-Requisitos Técnicos Utilizados
 
-4-Equipo del Proyecto
+4-Instalación
+
+5-Equipo del Proyecto
 
 
 ## 1-Descripción del Proyecto
 
 FreshAir es un proyecto práctico dentro del hackatón de Factoría F5, enfocado en el aprendizaje del manejo de las API  y la manipulación de datos mediante operaciones CRUD (Crear, Leer, Actualizar y Eliminar). Para llevar a cabo este proyecto, hemos configurado un entorno que incluye dos repositorios: una para el frontend y otra para el backend.Además, hemos utilizado React Vite para el desarrollo del frontend y hemos instalado bibliotecas como styled-components y herramientas para la gestión de rutas, entre otras funcionalidades.
 
-## 2-Requisitos Técnicos Utilizados
+## 2-Figma
+
+Bienvenido al diseño de FreshAir en Figma. Aquí encontrarás los componentes, estilos y flujos de usuario para nuestra aplicación web. [Figma](https://www.figma.com/design/jsgANui3OFSRdT0NhuRS0I/FreshAir?node-id=0-1&t=bdfBG1DLuhE5CLe0-0)
+
+
+## 3-Requisitos Técnicos Utilizados
 
 -Front-end: Tecnologías HTML, CSS, JS Vanilla. Bibliotecas y pluggins REACT con vite, React-DOM, React-Router-Dom. Librerías de front (styled-components)
 
@@ -27,7 +34,7 @@ FreshAir es un proyecto práctico dentro del hackatón de Factoría F5, enfocado
 -Buenas prácticas: Código Limpio
 
 
-## 3-Instalación
+## 4-Instalación
 
 Sigue los siguientes pasos para configurar el proyecto en tu entorno local y asi poder practicar.
 
@@ -63,7 +70,7 @@ Asegurate de tener estas versiones instaladas antes de comenzar
 
 Y no olvides antes de empezar realizar npm install en la terminal
 
-## 4-Equipo del Proyecto
+## 5-Equipo del Proyecto
 
 
 [Eugenia](https://github.com/Euge-Saravia)
