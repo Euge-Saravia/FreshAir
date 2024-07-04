@@ -1,16 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+
 import Card from './components/card/card'
-import Search from './components/card/card'
+import Footer from './components/footer/Footer'
+import NavBar from './components/navBar/NavBar'
 
 function App() {
-  const [city, setCity] = useState('')
-
+const [city, setCity] = useState('')
   return (
     <>
-      <Card />
+    <NavBar/>
+
+      <div>
+          <Card />
+       
+      </div>
+     
+      <Footer />
+
     </>
   );
 };
