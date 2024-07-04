@@ -7,11 +7,7 @@ function App() {
   return (
     <>
       <NavBar />
-
-      <div>
-        <Card />
-      </div>
-
+      <Card />
       <Footer />
     </>
   );

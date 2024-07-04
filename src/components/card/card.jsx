@@ -3,21 +3,24 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  width: 300px;
-  padding: 15px;
-  border: 1px solid #000000;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
   text-align: center;
   font-family: "Noto Serif", Cambria, "Palatino Linotype", "Book Antiqua",
     "URW Palladio L", serif;
+  align-self: center;
+  margin: auto 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 
   h1 {
     font-size: 44px;
-    color: #000000
+    color: #000000;
   }
 
   h2 {
-    color: #1980BC;
+    color: #1980bc;
     font-size: 12px;
   }
 
@@ -61,7 +64,7 @@ const Container = styled.div`
     padding-bottom: 30px;
   }
 
-  p {
+  .updated {
     font-size: 12px;
     color: #000000;
     margin-bottom: 5px;
@@ -78,20 +81,56 @@ const Container = styled.div`
     font-size: 14px;
     border: none;
     border-radius: 3px;
-    background-color: #1ECDB0;
+    background-color: #1ecdb0;
     color: #000000;
     cursor: pointer;
-    margin-left: 20px
+    margin-left: 20px;
   }
 
   button:hover {
-    background-color: #1ECDB0;
+    background-color: #1ecdb0;
   }
 
+  @media (min-width: 1024px) {
+    h1 {
+      font-size: 60px;
+    }
+    input {
+      padding: 15px 30px;
+      font-size: 20px;
+    }
+    button {
+      font-size: 20px;
+      padding: 15px 30px;
+    }
+  }
+`;
+
+const AirQualityContainer = styled.div`
+  max-width: 300px;
+  padding: 15px;
+  border: 1px solid #000000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  .city-name {
+    font-size: 44px;
+    color: #000000;
+  }
+`;
+
+const DefaultMessageContainer = styled.p`
+  font-family: "Noto Serif", Cambria, "Palatino Linotype", "Book Antiqua",
+    "URW Palladio L", serif;
+  font-size: 24px;
+  color: #000;
+
+  @media (min-width: 1024px) {
+    font-size: 40px;
+  }
 `;
 
 const Card = () => {
-  const [city, setCity] = useState("barcelona");
+  const [city, setCity] = useState("");
   const [searchCity, setSearchCity] = useState("");
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -119,7 +158,9 @@ const Card = () => {
   };
 
   useEffect(() => {
-    fetchData(city);
+    if (city) {
+      fetchData(city);
+    }
   }, [city]);
 
   const handleSearch = (e) => {
@@ -163,6 +204,7 @@ const Card = () => {
 
   return (
     <Container>
+      <h1>FreshAir</h1>
       <form onSubmit={handleSearch}>
         <input
           type="text"
@@ -174,9 +216,9 @@ const Card = () => {
       </form>
       {loading && <div>Loading...</div>}
       {error && <div>{error}</div>}
-      {data && (
-        <div>
-          <h1>{capitalizeFirstLetter(city)}</h1>
+      {data ? (
+        <AirQualityContainer>
+          <h2 className="city-name">{capitalizeFirstLetter(city)}</h2>
           <h2>
             {capitalizeFirstLetter(city)} AQI: Real-time Air Quality Index (AQI)
           </h2>
@@ -184,8 +226,13 @@ const Card = () => {
             <h4>{data.aqi}</h4>
             <h5>{getHealthImpact(data.aqi)}</h5>
           </div>
-          <p>Updated on {formatDate(data.time.s)}</p>
-        </div>
+          <p className="updated">Updated on {formatDate(data.time.s)}</p>
+        </AirQualityContainer>
+      ) : (
+        <DefaultMessageContainer>
+          Descubre la calidad del aire en tu ciudad o en tu próximo destino.
+          ¡Busca ahora y mantente informado!
+        </DefaultMessageContainer>
       )}
     </Container>
   );

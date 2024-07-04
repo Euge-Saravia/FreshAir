@@ -1,16 +1,14 @@
-import styled from 'styled-components';
-import logo from '../../assets/icons/logo.svg';
+import styled from "styled-components";
+import logo from "../../assets/icons/logo.svg";
 
 const Navbar = styled.nav`
   background-color: #ffff;
   padding: 20px;
   display: flex;
-  position: absolute;
-  width:100%;
+  width: 100%;
   justify-content: space-between;
-  left: 0px;
-  top:0px;
   box-sizing: border-box;
+  position: sticky;
 `;
 
 const NavLogo = styled.div`
@@ -26,21 +24,25 @@ const NavLogo = styled.div`
   }
 `;
 
-// const NavLinks = styled.div`
-//   display: flex;
-//   justify-content: space-between;
-//   gap: 40px;
-// `;
+const NavLinks = styled.div`
+  display: none;
 
-// const NavLink = styled.a`
-//   color: black;
-//   text-decoration: none;
-//   font-size: 18px;
+  @media (min-width: 1024px) {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+  }
+`;
 
-//   &:hover {
-//     color: green;
-//   }
-// `;
+const NavLink = styled.a`
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+
+  &:hover {
+    color: green;
+  }
+`;
 
 const Nav = () => {
   return (
@@ -49,11 +51,11 @@ const Nav = () => {
         <img src={logo} alt="Logo" />
         FreshAir
       </NavLogo>
-      {/* <NavLinks> */}
-        {/* <NavLink href="#home">Mis Cuidades</NavLink>
+      <NavLinks>
+        <NavLink href="#home">Mis Cuidades</NavLink>
         <NavLink href="#about">Mapa Meteorologico</NavLink>
-        <NavLink href="#services">Pronostico Diario</NavLink> */}
-      {/* </NavLinks> */}
+        <NavLink href="#services">Pronostico Diario</NavLink>
+      </NavLinks>
     </Navbar>
   );
 };
