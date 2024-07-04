@@ -1,25 +1,20 @@
-import './App.css'
-
-import Card from './components/card/card'
-import Footer from './components/footer/Footer'
-import NavBar from './components/navBar/NavBar'
+import "./App.css";
+import Card from "./components/card/card";
+import Footer from "./components/footer/Footer";
+import NavBar from "./components/navBar/NavBar";
 
 function App() {
-const [city, setCity] = useState('')
   return (
     <>
-    <NavBar/>
+      <NavBar />
 
       <div>
-          <Card />
-       
+        <Card />
       </div>
-     
-      <Footer />
 
+      <Footer />
     </>
   );
-};
-
+}
 
 export default App;
